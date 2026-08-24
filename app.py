@@ -1,0 +1,215 @@
+import streamlit as st
+
+# ── Configuration de la page ─────────────────────────────────────────────────
+st.set_page_config(
+    page_title="Samia | Sofrecom",
+    page_icon="🍊",
+    layout="centered"
+)
+
+# ── CSS global et style des cartes sur-mesure ────────────────────────────────
+st.markdown("""
+<style>
+    #MainMenu, footer, header { visibility: hidden; }
+    
+    /* Style pour les cartes de compétences (Onglet 2) */
+    .my-card {
+        background-color: white;
+        border: 1px solid #e6e6f1;
+        border-radius: 0.5rem;
+        padding: 1.2rem;
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .my-card h4 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+    }
+    .my-chip {
+        display: inline-block;
+        background: #FFF0E8;
+        color: #FF6600;
+        border-radius: 15px;
+        padding: 4px 10px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin: 2px 2px 4px 0;
+        border: 1px solid #FFE0CC;
+    }
+    .my-text {
+        font-size: 0.9rem;
+        color: #4A4A4A;
+        margin: 0;
+        line-height: 1.4;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# ── En-tête ──────────────────────────────────────────────────────────────────
+st.title("Bonjour, je suis Samia 👋")
+st.subheader("Data Scientist & Consultante Data")
+st.write("Candidate pour le poste de **Consultante Data/IA Junior** chez Sofrecom.")
+
+# ── Boutons de contact rapides (En-tête) ─────────────────────────────────────
+col_btn1, col_btn2, col_btn3 = st.columns(3)
+with col_btn1:
+    st.link_button("✉️ Me contacter par e-mail", "mailto:samia.saidhassani@gmail.com", use_container_width=True)
+with col_btn2:
+    st.link_button("🔗 Profil LinkedIn", "https://linkedin.com/in/samia-said-hassani-71057420b", use_container_width=True)
+with col_btn3:
+    st.link_button("📞 06 64 20 63 21", "tel:0664206321", use_container_width=True)
+
+st.divider()
+
+# ── Création des Onglets ─────────────────────────────────────────────────────
+tab_resume, tab_skills, tab_exp, tab_learn = st.tabs([
+    "🚀 L'Essentiel", 
+    "🛠️ Compétences", 
+    "💼 Expériences", 
+    "🌱 Ce que je veux apprendre"
+])
+
+# ── ONGLET 1 : L'Essentiel ───────────────────────────────────────────────────
+with tab_resume:
+    st.markdown("### 🎯 Pourquoi Sofrecom ?")
+    st.write("""
+    Parce que l'offre correspond exactement à ma vision de la Data : transformer des données brutes en outils utiles pour les équipes métiers. Chez Orange, j'ai vu l'impact direct de l'automatisation sur les finances. Rejoindre Sofrecom, c'est l'opportunité de multiplier ce type de projets concrets pour différents clients, tout en restant dans un écosystème technique exigeant que j'apprécie.
+    """)
+    
+    st.markdown("### 💡 Mon profil en 4 chiffres")
+    
+    # Première ligne de 2 colonnes
+    col1, col2 = st.columns(2)
+    col1.metric(label="Expérience Pro", value="1.5 an", delta="Grands Groupes")
+    col2.metric(label="Outils déployés", value="5", delta="En production")
+    
+    st.write("") # Petit espace
+    
+    # Deuxième ligne de 2 colonnes
+    col3, col4 = st.columns(2)
+    col3.metric(label="Parcours", value="Bac+5", delta="Paris-Saclay")
+    col4.metric(label="Impact Financier", value="140k € / mois", delta="Économisés via détection")
+
+# ── ONGLET 2 : Compétences (Sous forme de Cartes) ────────────────────────────
+with tab_skills:
+    st.markdown("### 🧩 Mes forces techniques")
+    
+    col_a, col_b = st.columns(2)
+    
+    # Carte 1
+    with col_a:
+        st.markdown("""
+        <div class="my-card">
+            <div>
+                <h4>🐍 Langages & Données</h4>
+                <span class='my-chip'>Python</span> 
+                <span class='my-chip'>SQL (PostgreSQL, GCP)</span> 
+                <span class='my-chip'>Pandas</span>
+                <span class='my-chip'>Numpy</span>
+            </div>
+            <p class="my-text">Conception de pipelines, nettoyage de données complexes, requêtes (jointures, CTE).</p>
+        </div>
+        """, unsafe_allow_html=True)
+            
+    # Carte 2
+    with col_b:
+        st.markdown("""
+        <div class="my-card">
+            <div>
+                <h4>🧠 Machine Learning</h4>
+                <span class='my-chip'>Scikit-learn</span> 
+                <span class='my-chip'>Apprentissage supervisé</span> 
+                <span class='my-chip'>Non supervisé</span>
+                <span class='my-chip'>Ensembles</span>
+                <span class='my-chip'>Séries temporelles</span>
+            </div>
+            <p class="my-text">Classification, prédiction, gestion du déséquilibre, statistiques inférentielles.</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.write("") # Petit espace entre les deux lignes
+    
+    col_c, col_d = st.columns(2)
+    
+    # Carte 3
+    with col_c:
+        st.markdown("""
+        <div class="my-card">
+            <div>
+                <h4>📊 Dataviz & Outils</h4>
+                <span class='my-chip'>Streamlit</span> 
+                <span class='my-chip'>Power BI</span> 
+                <span class='my-chip'>Excel</span>
+            </div>
+            <p class="my-text">Création d'interfaces interactives orientées prise de décision pour les équipes métiers.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Carte 4
+    with col_d:
+        st.markdown("""
+        <div class="my-card">
+            <div>
+                <h4>☁️ Cloud & Dev</h4>
+                <span class='my-chip'>GCP</span> 
+                <span class='my-chip'>Git</span> 
+                <span class='my-chip'>VS Code</span>
+            </div>
+            <p class="my-text">Travail collaboratif, versioning et déploiement d'environnements.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+# ── ONGLET 3 : Expériences ───────────────────────────────────────────────────
+with tab_exp:
+    with st.container(border=True):
+        st.markdown("### 🛍️ Galeries Lafayette | Alternance (1 an)")
+        st.markdown("**Data Analyst / Data Scientist**")
+        st.write("""
+        * **Création d'outils métiers :** Développement de tableaux de bord (Power BI) utilisés au quotidien par les équipes opérationnelles pour piloter la qualité de la donnée.
+        * **Machine Learning :** Développement d'un modèle de classification (Random Forest) pour anticiper les invendus, avec pour objectif d'outiller les acheteurs dans leur gestion des stocks.
+        """)
+        
+    with st.container(border=True):
+        st.markdown("### 🟧 Orange France | Stage (4 mois)")
+        st.markdown("**Data Scientist Junior**")
+        st.write("""
+        * **Création d'une application métier de A à Z :** Pour remplacer un processus manuel fastidieux, j'ai conçu et déployé un outil complet (logique en Python, base de données PostgreSQL, interface visuelle avec Streamlit) à destination de l'équipe Rémunération.
+        * **Impact :** L'outil est utilisé chaque semaine par les équipes non-techniques. Il a permis d'automatiser le traitement de 1 700 lignes et d'économiser **140 000 € par mois** en détectant des anomalies de facturation.
+        """)
+
+# ── ONGLET 4 : Ce que je veux apprendre ──────────────────────────────────────
+with tab_learn:
+    st.info("Ce que j'ai lu dans votre annonce et qui me motive particulièrement :")
+    
+    st.markdown("### 🤖 GenAI & IA Agentique")
+    st.write("""
+    Je suis transparente : je ne suis pas encore une experte en IA Générative. Mais c'est **exactement** ce que je viens chercher chez Sofrecom. 
+    Avec mes bases très solides en Python et en automatisation, je suis prête à mener une veille active et à me former rapidement sur :
+    """)
+    
+    # Cartes d'apprentissage (Reprenant les mots de l'annonce Sofrecom)
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        with st.container(border=True):
+            st.markdown("📡 **API OpenAI**")
+    with c2:
+        with st.container(border=True):
+            st.markdown("🤗 **Hugging Face**")
+    with c3:
+        with st.container(border=True):
+            st.markdown("⚙️ **MLOps**")
+            
+    st.write("J'ai prouvé ma capacité à monter en compétences en totale autonomie (j'ai appris Streamlit et PostgreSQL seule lors de mon stage). Je suis prête à relever le défi de l'IA Agentique avec vos équipes.")
+
+st.divider()
+
+# ── Rappel des boutons de contact (Pied de page) ─────────────────────────────
+st.markdown("##### 📩 Me contacter")
+f_col1, f_col2 = st.columns(2)
+with f_col1:
+    st.link_button("✉️ Envoyer un e-mail direct", "mailto:samia.saidhassani@gmail.com", use_container_width=True)
+with f_col2:
+    st.link_button("🔗 Voir mon profil LinkedIn", "https://linkedin.com/in/samia-said-hassani-71057420b", use_container_width=True)
