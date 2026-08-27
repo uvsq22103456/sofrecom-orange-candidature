@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" | content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Samia | Portfolio Data</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.58.0/build/stlite.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.58.0/build/stlite.js"></script>
+    <script>
+      stlite.mount(
+        `
+import streamlit as st
+
+st.set_page_config(page_title="Samia | Sofrecom", page_icon="🍊", layout="centered")
+
+st.title("Bonjour, je suis Samia 👋")
+st.subheader("Data Scientist & Consultante Data")
+st.write("Candidate pour le poste de **Consultante Data/IA Junior** chez Sofrecom.")
+
+col_btn1, col_btn2, col_btn3 = st.columns(3)
+with col_btn1:
+    st.link_button("✉️ Me contacter", "mailto:samia.saidhassani@gmail.com", use_container_width=True)
+with col_btn2:
+    st.link_button("🔗 Profil LinkedIn", "https://linkedin.com/in/samia-said-hassani-71057420b", use_container_width=True)
+with col_btn3:
+    st.link_button("📞 06 64 20 63 21", "tel:0664206321", use_container_width=True)
+
+st.divider()
+
+tab_resume, tab_skills, tab_exp, tab_learn = st.tabs(["🚀 L'Essentiel", "🛠️ Compétences", "💼 Expériences", "🌱 Ce que je veux apprendre"])
+
+with tab_resume:
+    st.markdown("### 🎯 Pourquoi Sofrecom ?")
+    st.write("Parce que l'offre correspond exactement à ma vision de la Data : transformer des données brutes en outils utiles pour les équipes métiers.")
+    col1, col2 = st.columns(2)
+    col1.metric("Expérience Pro", "1.5 an", "Grands Groupes")
+    col2.metric("Outils déployés", "5", "En production")
+    col3, col4 = st.columns(2)
+    col3.metric("Parcours", "Bac+5", "Paris-Saclay")
+    col4.metric("Impact Financier", "140k € / mois", "Économisés via détection")
+
+with tab_skills:
+    st.markdown("### 🧩 Mes forces techniques")
+    st.write("Python, SQL, Machine Learning, Power BI, Streamlit, GCP.")
+
+with tab_exp:
+    st.markdown("### 🛍️ Galeries Lafayette & 🟧 Orange France")
+    st.write("Détail des missions en Data Quality, ML (Random Forest) et automatisation.")
+
+with tab_learn:
+    st.markdown("### 🤖 GenAI & IA Agentique")
+    st.write("Objectif de montée en compétences : OpenAI API, Hugging Face, MLOps.")
+`,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
