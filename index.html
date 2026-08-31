@@ -106,7 +106,7 @@ with tab_resume:
     # Deuxième ligne de 2 colonnes
     col3, col4 = st.columns(2)
     col3.metric(label="Parcours", value="Bac+5", delta="Paris-Saclay")
-    col4.metric(label="Impact Financier", value="140k € / mois", delta="Économisés via détection")
+    col4.metric(label="Impact Financier", value="140k € / mois", delta="Économisés via détection d'anomalies")
 
 # ── ONGLET 2 : Compétences (Sous forme de Cartes) ────────────────────────────
 with tab_skills:
@@ -183,8 +183,9 @@ with tab_exp:
         st.markdown("### 🛍️ Galeries Lafayette | Alternance (1 an)")
         st.markdown("**Data Analyst / Data Scientist**")
         st.write("""
-        * **Création d'outils métiers :** Développement de tableaux de bord (Power BI) utilisés au quotidien par les équipes opérationnelles pour piloter la qualité de la donnée.
-        * **Machine Learning :** Développement d'un modèle de classification (Random Forest) pour anticiper les invendus, avec pour objectif d'outiller les acheteurs dans leur gestion des stocks.
+        * **Qualité de Données :** Développement de tableaux de bord (Power BI) utilisés au quotidien par les équipes opérationnelles pour piloter la qualité de la donnée.
+        * **PowerBi :** Développement de tableaux de bord métiers pour la prise de décision et le pilotage des performances, création de flux de données alimentant un lakehouse, .
+        * **Machine Learning :** Développement d'un modèle de classification (RandomForest, LightGBM) pour anticiper les invendus, avec pour objectif d'outiller les acheteurs dans leur gestion des stocks.
         """)
         
     with st.container(border=True):
