@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" | content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Samia | Portfolio Data</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.58.0/build/stlite.css" />
@@ -15,19 +15,17 @@
         `
 import streamlit as st
 
-# ── Configuration de la page ─────────────────────────────────────────────────
+# ── Configuration ─────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Samia | Sofrecom",
     page_icon="🍊",
     layout="centered"
 )
 
-# ── CSS global et style des cartes sur-mesure ────────────────────────────────
+# ── Style CSS ─────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
     #MainMenu, footer, header { visibility: hidden; }
-    
-    /* Style pour les cartes de compétences (Onglet 2) */
     .my-card {
         background-color: white;
         border: 1px solid #e6e6f1;
@@ -38,11 +36,7 @@ st.markdown("""
         flex-direction: column;
         justify-content: space-between;
     }
-    .my-card h4 {
-        margin-top: 0;
-        margin-bottom: 8px;
-        font-size: 1.05rem;
-    }
+    .my-card h4 { margin-top: 0; margin-bottom: 8px; font-size: 1.05rem; }
     .my-chip {
         display: inline-block;
         background: #FFF0E8;
@@ -54,12 +48,7 @@ st.markdown("""
         margin: 2px 2px 4px 0;
         border: 1px solid #FFE0CC;
     }
-    .my-text {
-        font-size: 0.9rem;
-        color: #4A4A4A;
-        margin: 0;
-        line-height: 1.4;
-    }
+    .my-text { font-size: 0.9rem; color: #4A4A4A; margin: 0; line-height: 1.4; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -68,36 +57,24 @@ st.title("Bonjour, je suis Samia 👋")
 st.subheader("Data Scientist & Consultante Data")
 st.write("Candidate pour le poste de **Consultante Data/IA Junior** chez Sofrecom.")
 
-# ── Boutons de contact rapides (En-tête) ─────────────────────────────────────
-col_btn1, col_btn2, col_btn3 = st.columns(3)
-with col_btn1:
-    col_g, col_o, col_d = st.columns(3)
+# ── Boutons de contact (Style sobre et neutre) ───────────────────────────────
+col_m1, col_m2, col_m3, col_m4 = st.columns(4)
 
-with col_g:
-    st.link_button(
-        "🔴 Gmail",
-        "https://mail.google.com/mail/?view=cm&fs=1&to=samia.saidhassani@gmail.com",
-        use_container_width=True
-    )
-with col_o:
-    st.link_button(
-        "🟦 Outlook",
-        "https://outlook.office.com/mail/deeplink/compose?to=samia.saidhassani@gmail.com",
-        use_container_width=True
-    )
-with col_d:
-    st.link_button(
-        "💻 Mail par défaut",
-        "mailto:samia.saidhassani@gmail.com",
-        use_container_width=True
-    )
-with col_btn2:
-    st.link_button("🔗 Profil LinkedIn", "https://linkedin.com/in/samia-said-hassani-71057420b", use_container_width=True)
-with col_btn3:
+with col_m1:
+    st.link_button("✉️ Gmail", "https://mail.google.com/mail/?view=cm&fs=1&to=samia.saidhassani@gmail.com", use_container_width=True)
+
+with col_m2:
+    st.link_button("📧 Outlook", "https://outlook.live.com/mail/0/deeplink/compose?to=samia.saidhassani@gmail.com", use_container_width=True)
+
+with col_m3:
+    st.link_button("🔗 LinkedIn", "https://linkedin.com/in/samia-said-hassani-71057420b", use_container_width=True)
+
+with col_m4:
     st.link_button("📞 06 64 20 63 21", "tel:0664206321", use_container_width=True)
 
 st.divider()
 
+# ── Onglets ──────────────────────────────────────────────────────────────────
 tab_resume, tab_skills, tab_exp, tab_learn, tab_docs = st.tabs([
     "🚀 L'Essentiel", 
     "🛠️ Compétences", 
@@ -105,6 +82,7 @@ tab_resume, tab_skills, tab_exp, tab_learn, tab_docs = st.tabs([
     "🌱 Ce que je veux apprendre",
     "📄 Documents" 
 ])
+
 # ── ONGLET 1 : L'Essentiel ───────────────────────────────────────────────────
 with tab_resume:
     st.markdown("### 🎯 Pourquoi Sofrecom ?")
@@ -113,26 +91,20 @@ with tab_resume:
     """)
     
     st.markdown("### 💡 Mon profil en 4 chiffres")
-    
-    # Première ligne de 2 colonnes
     col1, col2 = st.columns(2)
     col1.metric(label="Expérience Pro", value="1.5 an", delta="Grands Groupes")
     col2.metric(label="Outils déployés", value="5", delta="En production")
     
-    st.write("") # Petit espace
+    st.write("")
     
-    # Deuxième ligne de 2 colonnes
     col3, col4 = st.columns(2)
     col3.metric(label="Parcours", value="Bac+5", delta="Paris-Saclay")
     col4.metric(label="Impact Financier", value="140k € / mois", delta="Économisés via détection d'anomalies")
 
-# ── ONGLET 2 : Compétences (Sous forme de Cartes) ────────────────────────────
+# ── ONGLET 2 : Compétences ───────────────────────────────────────────────────
 with tab_skills:
     st.markdown("### 🧩 Mes forces techniques")
-    
     col_a, col_b = st.columns(2)
-    
-    # Carte 1
     with col_a:
         st.markdown("""
         <div class="my-card">
@@ -147,7 +119,6 @@ with tab_skills:
         </div>
         """, unsafe_allow_html=True)
             
-    # Carte 2
     with col_b:
         st.markdown("""
         <div class="my-card">
@@ -163,11 +134,8 @@ with tab_skills:
         </div>
         """, unsafe_allow_html=True)
     
-    st.write("") # Petit espace entre les deux lignes
-    
+    st.write("")
     col_c, col_d = st.columns(2)
-    
-    # Carte 3
     with col_c:
         st.markdown("""
         <div class="my-card">
@@ -181,7 +149,6 @@ with tab_skills:
         </div>
         """, unsafe_allow_html=True)
 
-    # Carte 4
     with col_d:
         st.markdown("""
         <div class="my-card">
@@ -202,29 +169,27 @@ with tab_exp:
         st.markdown("**Data Analyst / Data Scientist**")
         st.write("""
         * **Qualité de Données :** Développement de tableaux de bord (Power BI) utilisés au quotidien par les équipes opérationnelles pour piloter la qualité de la donnée.
-        * **PowerBi :** Développement de tableaux de bord métiers pour la prise de décision et le pilotage des performances, création de flux de données alimentant un lakehouse, .
-        * **Machine Learning :** Développement d'un modèle de classification (RandomForest, LightGBM) pour anticiper les invendus, avec pour objectif d'outiller les acheteurs dans leur gestion des stocks.
+        * **PowerBI :** Développement de tableaux de bord métiers pour la prise de décision et le pilotage des performances, création de flux de données alimentant un lakehouse.
+        * **Machine Learning :** Développement d'un modèle de classification (RandomForest, LightGBM) pour anticiper les invendus.
         """)
         
     with st.container(border=True):
         st.markdown("### 🟧 Orange France | Stage (4 mois)")
         st.markdown("**Data Scientist Junior**")
         st.write("""
-        * **Création d'une application métier de A à Z :** Pour remplacer un processus manuel fastidieux, j'ai conçu et déployé un outil complet (logique en Python, base de données PostgreSQL, interface visuelle avec Streamlit) à destination de l'équipe Rémunération.
-        * **Impact :** L'outil est utilisé chaque semaine par les équipes non-techniques. Il a permis d'automatiser le traitement de 1 700 lignes et d'économiser **140 000 € par mois** en détectant des anomalies de facturation.
+        * **Création d'une application métier de A à Z :** Outil complet (Python, PostgreSQL, Streamlit) pour l'équipe Rémunération.
+        * **Impact :** Traitement de 1 700 lignes et **140 000 € par mois** économisés via détection d'anomalies.
         """)
 
 # ── ONGLET 4 : Ce que je veux apprendre ──────────────────────────────────────
 with tab_learn:
     st.info("Ce que j'ai lu dans votre annonce et qui me motive particulièrement :")
-    
     st.markdown("### 🤖 GenAI & IA Agentique")
     st.write("""
     Je suis transparente : je ne suis pas encore une experte en IA Générative. Mais c'est **exactement** ce que je viens chercher chez Sofrecom. 
-    Avec mes bases très solides en Python et en automatisation, je suis prête à mener une veille active et à me former rapidement sur :
+    Avec mes bases très solides en Python et en automatisation, je suis prête à me former rapidement sur :
     """)
     
-    # Cartes d'apprentissage (Reprenant les mots de l'annonce Sofrecom)
     c1, c2, c3 = st.columns(3)
     with c1:
         with st.container(border=True):
@@ -236,7 +201,9 @@ with tab_learn:
         with st.container(border=True):
             st.markdown("⚙️ **MLOps**")
             
-    st.write("J'ai prouvé ma capacité à monter en compétences en totale autonomie (j'ai appris Streamlit et PostgreSQL seule lors de mon stage). Je suis prête à relever le défi de l'IA Agentique avec vos équipes.")
+    st.write("J'ai prouvé ma capacité à monter en compétences en totale autonomie. Je suis prête à relever le défi avec vos équipes.")
+
+# ── ONGLET 5 : Documents ─────────────────────────────────────────────────────
 with tab_docs:
     st.markdown("### 📄 Mes documents")
     st.write("Retrouvez ici mon CV détaillé ainsi que ma lettre de recommandation.")
@@ -245,32 +212,24 @@ with tab_docs:
     
     with col_pdf1:
         st.markdown("#### Mon CV")
-        # L'aperçu du PDF utilisant le fichier du repo
         st.markdown(
             '<iframe src="CV_data_scientist_Samia.pdf" width="100%" height="500" style="border: 1px solid #e6e6f1; border-radius: 5px;"></iframe>',
             unsafe_allow_html=True
         )
-        # Le bouton pour le télécharger ou l'ouvrir en grand
         st.link_button("📥 Télécharger le CV", "CV_data_scientist_Samia.pdf", use_container_width=True)
 
     with col_pdf2:
         st.markdown("#### Lettre de recommandation")
-        # L'aperçu de la lettre utilisant le fichier du repo
         st.markdown(
             '<iframe src="Lettre de recommandation Samia.pdf" width="100%" height="500" style="border: 1px solid #e6e6f1; border-radius: 5px;"></iframe>',
             unsafe_allow_html=True
         )
-        # Le bouton pour la télécharger
         st.link_button("📥 Télécharger la lettre", "Lettre de recommandation Samia.pdf", use_container_width=True)
+
 st.divider()
 
-# ── Rappel des boutons de contact (Pied de page) ─────────────────────────────
-st.markdown("##### 📩 Me contacter")
-f_col1, f_col2 = st.columns(2)
-with f_col1:
-    st.link_button("✉️ Envoyer un e-mail direct", "mailto:samia.saidhassani@gmail.com", use_container_width=True)
-with f_col2:
-    st.link_button("🔗 Voir mon profil LinkedIn", "https://linkedin.com/in/samia-said-hassani-71057420b", use_container_width=True)
+# ── Pied de page épuré ───────────────────────────────────────────────────────
+st.caption("Samia Saïd Hassani — Portfolio Consultante Data / IA")
 `,
         document.getElementById("root")
       );
