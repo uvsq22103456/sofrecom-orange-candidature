@@ -79,14 +79,13 @@ with col_btn3:
 
 st.divider()
 
-# ── Création des Onglets ─────────────────────────────────────────────────────
-tab_resume, tab_skills, tab_exp, tab_learn = st.tabs([
+tab_resume, tab_skills, tab_exp, tab_learn, tab_docs = st.tabs([
     "🚀 L'Essentiel", 
     "🛠️ Compétences", 
     "💼 Expériences", 
-    "🌱 Ce que je veux apprendre"
+    "🌱 Ce que je veux apprendre",
+    "📄 Documents" 
 ])
-
 # ── ONGLET 1 : L'Essentiel ───────────────────────────────────────────────────
 with tab_resume:
     st.markdown("### 🎯 Pourquoi Sofrecom ?")
@@ -219,7 +218,31 @@ with tab_learn:
             st.markdown("⚙️ **MLOps**")
             
     st.write("J'ai prouvé ma capacité à monter en compétences en totale autonomie (j'ai appris Streamlit et PostgreSQL seule lors de mon stage). Je suis prête à relever le défi de l'IA Agentique avec vos équipes.")
+with tab_docs:
+    st.markdown("### 📄 Mes documents")
+    st.write("Retrouvez ici mon CV détaillé ainsi que ma lettre de recommandation.")
+    
+    col_pdf1, col_pdf2 = st.columns(2)
+    
+    with col_pdf1:
+        st.markdown("#### Mon CV")
+        # L'aperçu du PDF utilisant le fichier du repo
+        st.markdown(
+            '<iframe src="cv.pdf" width="100%" height="500" style="border: 1px solid #e6e6f1; border-radius: 5px;"></iframe>',
+            unsafe_allow_html=True
+        )
+        # Le bouton pour le télécharger ou l'ouvrir en grand
+        st.link_button("📥 Télécharger le CV", "CV_data_scientist_Samia.pdf", use_container_width=True)
 
+    with col_pdf2:
+        st.markdown("#### Lettre de recommandation")
+        # L'aperçu de la lettre utilisant le fichier du repo
+        st.markdown(
+            '<iframe src="lettre.pdf" width="100%" height="500" style="border: 1px solid #e6e6f1; border-radius: 5px;"></iframe>',
+            unsafe_allow_html=True
+        )
+        # Le bouton pour la télécharger
+        st.link_button("📥 Télécharger la lettre", "Lettre de recommandations Samia.pdf", use_container_width=True)
 st.divider()
 
 # ── Rappel des boutons de contact (Pied de page) ─────────────────────────────
