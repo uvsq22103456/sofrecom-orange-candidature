@@ -71,7 +71,26 @@ st.write("Candidate pour le poste de **Consultante Data/IA Junior** chez Sofreco
 # ── Boutons de contact rapides (En-tête) ─────────────────────────────────────
 col_btn1, col_btn2, col_btn3 = st.columns(3)
 with col_btn1:
-    st.link_button("✉️ Me contacter par e-mail", "mailto:samia.saidhassani@gmail.com", use_container_width=True)
+    col_g, col_o, col_d = st.columns(3)
+
+with col_g:
+    st.link_button(
+        "🔴 Gmail",
+        "https://mail.google.com/mail/?view=cm&fs=1&to=samia.saidhassani@gmail.com",
+        use_container_width=True
+    )
+with col_o:
+    st.link_button(
+        "🟦 Outlook",
+        "https://outlook.office.com/mail/deeplink/compose?to=samia.saidhassani@gmail.com",
+        use_container_width=True
+    )
+with col_d:
+    st.link_button(
+        "💻 Mail par défaut",
+        "mailto:samia.saidhassani@gmail.com",
+        use_container_width=True
+    )
 with col_btn2:
     st.link_button("🔗 Profil LinkedIn", "https://linkedin.com/in/samia-said-hassani-71057420b", use_container_width=True)
 with col_btn3:
