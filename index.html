@@ -101,7 +101,7 @@ with tab_resume:
     col3.metric(label="Parcours", value="Bac+5", delta="Paris-Saclay")
     col4.metric(label="Impact Financier", value="140k € / mois", delta="Économisés via détection d'anomalies")
 
-# ── ONGLET 2 : Compétences ───────────────────────────────────────────────────
+# ── ONGLET 2 : Compétences (Bibliothèques blindées) ─────────────────────────
 with tab_skills:
     st.markdown("### 🧩 Mes forces techniques")
     col_a, col_b = st.columns(2)
@@ -111,11 +111,12 @@ with tab_skills:
             <div>
                 <h4>🐍 Langages & Données</h4>
                 <span class='my-chip'>Python</span> 
-                <span class='my-chip'>SQL (PostgreSQL, GCP)</span> 
+                <span class='my-chip'>SQL (PostgreSQL)</span> 
                 <span class='my-chip'>Pandas</span>
                 <span class='my-chip'>Numpy</span>
+                <span class='my-chip'>SciPy</span>
             </div>
-            <p class="my-text">Conception de pipelines, nettoyage de données complexes, requêtes (jointures, CTE).</p>
+            <p class="my-text">Conception de pipelines ETL, manipulation et nettoyage de données complexes, requêtes avancées.</p>
         </div>
         """, unsafe_allow_html=True)
             
@@ -125,12 +126,12 @@ with tab_skills:
             <div>
                 <h4>🧠 Machine Learning</h4>
                 <span class='my-chip'>Scikit-learn</span> 
-                <span class='my-chip'>Apprentissage supervisé</span> 
-                <span class='my-chip'>Non supervisé</span>
-                <span class='my-chip'>Ensembles</span>
+                <span class='my-chip'>LightGBM</span> 
+                <span class='my-chip'>XGBoost</span>
                 <span class='my-chip'>Séries temporelles</span>
+                <span class='my-chip'>Supervisé / Non supervisé</span>
             </div>
-            <p class="my-text">Classification, prédiction, gestion du déséquilibre, statistiques inférentielles.</p>
+            <p class="my-text">Classification, prédiction, gestion du déséquilibre, statistiques inférentielles, modèles d'ensembles.</p>
         </div>
         """, unsafe_allow_html=True)
     
@@ -143,9 +144,11 @@ with tab_skills:
                 <h4>📊 Dataviz & Outils</h4>
                 <span class='my-chip'>Streamlit</span> 
                 <span class='my-chip'>Power BI</span> 
-                <span class='my-chip'>Excel</span>
+                <span class='my-chip'>Matplotlib</span>
+                <span class='my-chip'>Seaborn</span>
+                <span class='my-chip'>Plotly</span>
             </div>
-            <p class="my-text">Création d'interfaces interactives orientées prise de décision pour les équipes métiers.</p>
+            <p class="my-text">Création d'interfaces interactives et de tableaux de bord orientés prise de décision pour les métiers.</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -155,10 +158,11 @@ with tab_skills:
             <div>
                 <h4>☁️ Cloud & Dev</h4>
                 <span class='my-chip'>GCP</span> 
-                <span class='my-chip'>Git</span> 
+                <span class='my-chip'>Git / GitHub</span> 
                 <span class='my-chip'>VS Code</span>
+                <span class='my-chip'>Jupyter</span>
             </div>
-            <p class="my-text">Travail collaboratif, versioning et déploiement d'environnements.</p>
+            <p class="my-text">Travail collaboratif, versioning du code et déploiement d'environnements analytiques.</p>
         </div>
         """, unsafe_allow_html=True)
 
